@@ -1,0 +1,19 @@
+<mat-form-field class="employee-create">
+    <mat-label>Name</mat-label >
+    <input matInput #txtName>
+  </mat-form-field>
+
+  <mat-form-field class="employee-create">
+    <mat-label>Surname</mat-label >
+    <input matInput #txtSurname>
+  </mat-form-field>
+
+  
+<div class="date">
+    <h3>Birth Date</h3>    
+  <input type="date" id="date" #txtBirthDate>
+</div>
+
+
+
+  <button mat-raised-button class="employee-create" color="primary" (click)="create(txtName,txtSurname,txtBirthDate)">Save</button>

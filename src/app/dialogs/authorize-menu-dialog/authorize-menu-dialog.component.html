@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>{{data.name}} Add Role</h1>
+<div mat-dialog-content>
+  <p> Add Role to this EndPoint</p>  
+</div>
+
+<mat-selection-list #rolesComponent>
+  <mat-list-option *ngFor="let role of listRoles" selected="{{role.selected}}">
+    {{role.name}}
+  </mat-list-option>
+</mat-selection-list>
+<p>
+  Options Selected :{{rolesComponent.selectedOptions.selected.length}}
+</p>
+
+<div mat-dialog-actions>
+  <button mat-button (click)="close()">No</button>
+  <button mat-button  cdkFocusInitial (click)="assignRoles(rolesComponent)">Assign Roles</button>
+</div>

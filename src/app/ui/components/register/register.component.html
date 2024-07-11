@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-md-3"></div>
+  <div class="col-md-6">
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+      <div class="form-group">
+        <label for="email">UserName</label>
+        <input type="text" formControlName="username" class="form-control" id="username" placeholder="Enter UserName"
+          [ngClass]="{'is-invalid': submitted && component.username.errors}">
+        <small class="form-text text-muted invalid-feedback" *ngIf="submitted && component.username.errors?.required">You
+          must enter a Username!</small>
+        <small class="form-text text-muted invalid-feedback"
+          *ngIf="submitted && (component.username.errors?.maxlength || component.username.errors?.minlength)">The length of the
+          UserName must be between 2 and 50!</small>
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="email">Name</label>
+        <input type="text" formControlName="name" class="form-control" id="name" placeholder="Enter Name"
+          [ngClass]="{'is-invalid': submitted && component.name.errors}">
+        <small class="form-text text-muted invalid-feedback" *ngIf="submitted && component.name.errors?.required">You
+          must enter a name!</small>
+        <small class="form-text text-muted invalid-feedback"
+          *ngIf="submitted && (component.name.errors?.maxlength || component.name.errors?.minlength)">The length of the
+          Name must be between 2 and 50!</small>
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="surname">Surname</label>
+        <input type="text" formControlName="surname" class="form-control" id="surname" placeholder="Enter Surname"
+          [ngClass]="{'is-invalid': submitted && component.surname.errors}">
+        <small class="form-text text-muted invalid-feedback" *ngIf="submitted && component.surname.errors?.required">You
+          must enter a Surname!</small>
+        <small class="form-text text-muted invalid-feedback"
+          *ngIf="submitted && (component.surname.errors?.maxlength || component.surname.errors?.minlength)">The length
+          of the Surname must be between 2 and 50!</small>
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" formControlName="email" class="form-control" id="email" placeholder="Enter email"
+          [ngClass]="{'is-invalid': submitted && component.email.errors}">
+        <small class="form-text text-muted invalid-feedback" *ngIf="submitted && component.email.errors?.required">You
+          must enter Email!</small>
+        <small class="form-text text-muted invalid-feedback" *ngIf="submitted && component.email.errors?.email">Please
+          enter correct Email!</small>
+      </div>
+      <br>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control" id="password" placeholder="Password" [ngClass]="{'is-invalid': submitted && component.password.errors}">
+        <small class="form-text text-muted invalid-feedback" *ngIf="submitted && component.password.errors?.required">You
+          must enter Password!</small>
+        <small class="form-text text-muted invalid-feedback" *ngIf="submitted && component.password.errors?.minlength">The password must contain at least 8 characters!</small>
+      </div>
+      <br>
+      <button type="submit" class="btn btn-primary">Log In</button>
+    </form>
+  </div>
+  <div class="col-md-3"></div>
+
+</div>
